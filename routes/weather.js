@@ -14,6 +14,7 @@ let cache = apiCache.middleware; //use it as a middleware // cache-control = max
 //for this amount of time it will give as cache response
 
 router.get("/", cache("2 mins"), async (req, resp) => {
+  //use req.query as url.parse is deprecated
   try {
     const params = new URLSearchParams({
       [API_KEY_NAME]: API_KEY_VALUE,
