@@ -2,11 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const rateLimit = require("express-rate-limit");
 
-require("dotenv").config();
 //store your api key on the proxy server instead of including it directly in the api
+require("dotenv").config();
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000 || process.env.PORT;
 const app = express();
+//enable cors
+app.use(cors());
 
 //rate limit 100 within 10 mins
 const limiter = rateLimit({
@@ -14,13 +16,9 @@ const limiter = rateLimit({
   max: 5, // how many request
 });
 
-//in http header x-ratelimit-limit / x-ratelimit-remaining
+//Check the http request header x-ratelimit-limit / x-ratelimit-remaining
 app.use(limiter);
 app.set("trust proxy", 1); // using it as proxy
 
 app.use("/api", require("./routes/weather"));
-
-//enable cors
-app.use(cors());
-
-app.listen(PORT, () => console.log("server started"));
+app.listen(PORT, () => console.log(`server running on port ${PORT} `));
