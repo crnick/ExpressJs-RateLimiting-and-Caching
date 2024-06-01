@@ -1,4 +1,4 @@
-# NodeRateLimitCache
+# Express Rate Limiting and Caching
 
 This is a project created using Express JS, in which we are fetching the weather details using an API, by utlizing the needle package. The Route in the project have been setup using Express JS, while simultaneously using the rate limiting and api cache packages alongside it.
 
