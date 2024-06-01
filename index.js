@@ -7,6 +7,8 @@ require("dotenv").config();
 
 const PORT = 5000 || process.env.PORT;
 const app = express();
+
+
 //enable cors
 app.use(cors());
 
@@ -14,6 +16,7 @@ app.use(cors());
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000, //10 mins, for how much time
   max: 5, // how many request
+  statusCode: 429 //default status code after limit is reached.
 });
 
 //Check the http request header x-ratelimit-limit / x-ratelimit-remaining
@@ -21,4 +24,6 @@ app.use(limiter);
 app.set("trust proxy", 1); // using it as proxy
 
 app.use("/api", require("./routes/weather"));
+
+
 app.listen(PORT, () => console.log(`server running on port ${PORT} `));
