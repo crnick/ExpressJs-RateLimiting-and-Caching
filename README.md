@@ -13,3 +13,14 @@ This project is a simple Express.js application that fetches weather details usi
 - Needle: A lightweight, promise-based HTTP client for making API requests.
 - apicache: Middleware for caching API responses in Express.js.
 - express-rate-limit: Middleware for rate limiting in Express.js.
+
+## Setup
+- Node.js and npm installed on your machine.
+- An API key from a weather service provider (e.g., OpenWeatherMap).
+
+# To start the server, run:
+- npm start
+- The server will start on http://localhost:3000 by default.
+
+
+
