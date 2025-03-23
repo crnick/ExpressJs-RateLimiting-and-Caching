@@ -1,14 +1,15 @@
-# ExpressJs Rate Limiting and Caching
+# Express.js Weather API with Rate Limiting and Caching
+This project is a simple Express.js application that fetches weather details using an external API. It utilizes rate limiting to control the number of requests and caching to improve performance by storing API responses temporarily. The project uses the needle package for making HTTP requests, apicache for caching, and express-rate-limit for rate limiting.
 
-This is a project created using Express JS, in which we are fetching the weather details using an API, by utlizing the needle package. The Route in the project have been setup using Express JS, while simultaneously using the rate limiting and api cache packages alongside it.
+## Features
+- Weather Data Fetching: Fetches weather details using an external API.
+- Rate Limiting: Limits the number of requests a user can make within a specific time frame.
+- Caching: Temporarily stores API responses to reduce redundant API calls and improve performance.
 
-# SetUp
-A separate folder for routes is being created which redirects all the incoming get requests. A apicache package is being
-utilized as a middleware where we mention how long we want to cache the responses. This is done by passing it as an additional parameter when receving the incoming request.
 
-Also for the rate limiting we have utilized it in the main Index.js file. We have also used it as an middleware by mentioning how many requests to rate limit within given amount of time.
-
-A seperate folder for controller is created, where we redirect the requests and send the responses based on the route on which the incoming request is received.
-
-# Technologies Used
-This project is build using Node JS and Express JS, while also using the promise based needle package for sending http request.
+## Technologies Used
+- Node.js: A JavaScript runtime for building server-side applications.
+- Express.js: A web framework for Node.js used to handle routing and middleware.
+- Needle: A lightweight, promise-based HTTP client for making API requests.
+- apicache: Middleware for caching API responses in Express.js.
+- express-rate-limit: Middleware for rate limiting in Express.js.
