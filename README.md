@@ -18,7 +18,15 @@ This project is a simple Express.js application that fetches weather details usi
 - Node.js and npm installed on your machine.
 - An API key from a weather service provider (e.g., OpenWeatherMap).
 
-# To start the server, run:
+## Installation
+- Clone the repository
+- Navigate to the project directory
+
+## Install the dependencies:
+npm install
+
+## Running the Server
+- To start the server, run:
 - npm start
 - The server will start on http://localhost:3000 by default.
 
